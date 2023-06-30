@@ -1,0 +1,29 @@
+.open-snackbar {
+    top: 75%;
+}
+
+.close-snackbar {
+    top: 150%;
+}
+
+.snackbar-button {
+    width: 6vh;
+    height: 6vh;
+    cursor: pointer;
+}
+
+.snackbar {
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    Left: 50%;
+    position: absolute;
+    border-radius: 1vh;
+    width: 21vw;
+    height: 8vh;
+    padding: 0 1vw 0 1vw;
+    transition-duration: 500ms;
+    box-shadow: 0px 0px 12px 3px #420075;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,0 +1,58 @@
+.main  {
+    width: 60vw;
+    margin: auto;
+    height: 100vh;
+    background-color: #ffffff;
+    min-width: 40em;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+}
+
+.main-text {
+    font-size: 6vh;
+    padding: 3vw;
+    font-weight: 300;
+}
+
+.line {
+    background: #420075;
+    height: 2px;
+    border: 0;
+}
+
+.text-icon {
+    display: flex;
+    margin-top: 3vh;
+    transition-duration: 500ms;
+    width: fit-content;
+    margin-left: 3vw;
+}
+
+.text-icon:hover {
+    transform: translateX(2vw);
+}
+
+.icon {
+    display: block;
+    width: 4vw;
+}
+
+.text {
+    color: black;
+    font-weight: 100;
+    position: relative;
+    font-size: 4vh;
+    top: 50%;
+    transform: translate(0, -50%);
+    margin-left: 2vw;
+}
+
+.text-icon-bottom {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 3vh;
+    cursor: pointer;
+}

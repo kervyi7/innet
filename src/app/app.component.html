@@ -1,0 +1,5 @@
+<router-outlet></router-outlet>
+<div class="snackbar" [ngClass]="{'open-snackbar': failedLoad, 'close-snackbar': !failedLoad}">
+    <span>{{ errorMessage }}</span>
+    <img class="snackbar-button" src="../../../../../assets/img/close-menu.svg" (click)="closeMessage()"/>
+</div>

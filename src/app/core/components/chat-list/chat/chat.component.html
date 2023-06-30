@@ -1,0 +1,35 @@
+<div *ngIf="chat" class="main">
+    <div class="header">
+        <div class="avatar-username-status">
+            <img *ngIf="chat.avatar" class="avatar" [src]="chat.avatar" />
+            <img *ngIf="!chat.avatar" class="avatar" src="../../../../../assets/img/avatar_white.png" />
+            <div class="username-status">
+                <div class="username">{{chat.name}}</div>
+                <div class="status">Online</div>
+            </div>
+        </div>
+        <div class="settings">
+            <img class="settings-icon" src="../../../../../assets/img/more_vert-24px 1.svg" />
+        </div>
+    </div>
+    <div class="message-list">
+        <div  *ngFor="let message of messages" [ngClass]="{'my-message': message.isMy, 'not-my-message': !message.isMy}">
+            <div class="message" *ngIf="message">
+                <div class="message-content"> 
+                    {{message.content}}
+                </div>
+                <div class="message-date">
+                    {{message.localDate | date: "HH:mm"}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="message-input-block">
+        <textarea (onkeyup)="textAreaAdjust(this)" placeholder="Write a message..." class="message-input"
+            [(ngModel)]="newMessage"></textarea>
+        <button class="send-button" (click)="sendMessage()">Send</button>
+    </div>
+</div>
+<div *ngIf="!chat" class="chat-not-selected">
+    Please select a chat to start messaging
+</div>

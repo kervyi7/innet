@@ -1,0 +1,31 @@
+<div class="main">
+    <div class="chat-list-main-block">
+        <div class="chat-list-block">
+            <div class="search-block">
+                <input type="text" class="search-input" placeholder="Search..." />
+                <img class="search-image" src="../../../../assets/img/search.svg" />
+            </div>
+            <div class="user-main-block">
+                <div *ngFor="let chat of chats" class="user-block" (click)="openChat(chat)"
+                    [ngClass]="{'selected': chat.id === selectedId}">
+                    <img *ngIf=" chat.avatar" class="avatar" [src]="chat.avatar" />
+                    <img *ngIf="!chat.avatar" class="avatar" src="../../../../assets/img/avatar.png" />
+                    <div class="username-message">
+                        <div class="username">
+                            {{chat.name}}
+                        </div>
+                        <div class="last-message">
+                            <span *ngIf="chat.lastMassage.content">{{chat.lastMassage.content}}</span>
+                        </div>
+                    </div>
+                    <div class="time">
+                        <span *ngIf="chat.lastMassage.localDate">{{chat.lastMassage.localDate}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chat-block">
+            <app-chat></app-chat>
+        </div>
+    </div>
+</div>

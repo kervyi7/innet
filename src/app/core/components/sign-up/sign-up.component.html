@@ -1,0 +1,42 @@
+<div class="main">
+    <form #signupForm="ngForm" (ngSubmit)="register()" class="window" *ngIf="!isViewConfirmationPanel">
+        <div class="main-text">
+            Sign up
+        </div>
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput type="email" [(ngModel)]="email" required name="email" minlength="14" (focusout)="emailValidation()"/>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput type="text" [(ngModel)]="username" required minlength="4" name="username" (focusout)="usernameValidation()"/>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Fullname</mat-label>
+            <input matInput type="text" [(ngModel)]="fullname" name="fullname" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input type="password" matInput  [(ngModel)]="password" required minlength="6" name="password" (focusout)="passwordValidation()"/>
+        </mat-form-field>
+        <div class="validation-message">{{validationMessage}}</div>
+        <div class="text-btn-block">
+            <a href="#" routerLink="../signin" routerLinkActive="active">
+                <div>Have an account?</div>
+            </a>
+            <button class="login-button" mat-stroked-button type="submit" [disabled]="!signupForm.valid">Sign up</button>
+        </div>
+    </form>
+    <div class="window1" *ngIf="isViewConfirmationPanel">
+        <div class="main-text">Confirm</div>
+        <div>We sent a verification code to {{email}} to verify your identity. </div>
+        <div class="code-input">
+            <mat-form-field>
+                <mat-label>Code</mat-label>
+                <input matInput type="text" [(ngModel)]="code" minlength="6" maxlength="6"/>
+            </mat-form-field>
+        </div>
+        <div class="validation-message">{{validationMessage}}</div>
+        <button class="login-button" mat-stroked-button (click)="confirm()">Confirm</button>
+    </div>
+</div>

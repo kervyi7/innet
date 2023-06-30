@@ -1,0 +1,21 @@
+<div class="main">
+    <form #signinForm="ngForm" class="window" (ngSubmit)="login()">
+        <div class="main-text">
+            Sign in
+        </div>
+        <mat-form-field class="example-full-width">
+            <mat-label>Username</mat-label>
+            <input matInput type="text" [(ngModel)]="username" name="username" required minlength="4"/>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput [(ngModel)]="password" name="password" required minlength="6"/>
+        </mat-form-field>
+        <div class="text-block">
+            <div>Forgot password?</div>
+            <a href="#" routerLink="../signup" routerLinkActive="active"><div>Don't have an account?</div></a>
+        </div>
+        <div class="validation-message">{{validationMessage}}</div>
+        <button class="login-button" mat-stroked-button type="submit" [disabled]="!signinForm.valid">Sign In</button>
+    </form>
+</div>

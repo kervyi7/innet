@@ -1,0 +1,55 @@
+<!-- <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="cropperSettings.maintainAspectRatio"
+    [aspectRatio]="cropperSettings.aspectRatio" [format]="cropperSettings.format"
+    [resizeToWidth]="cropperSettings.resizeToWidth" [resizeToHeight]="cropperSettings.resizeToHeight"
+    (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()" (cropperReady)="cropperReady()"
+    (loadImageFailed)="loadImageFailed()"></image-cropper>
+<img [src]="croppedImage" />
+<button (click)="addFile()">Add</button> -->
+
+<div class="main">
+    <div class="settings-block">
+        <div class="main-text">
+            Profile Edit
+        </div>
+        <hr class="line" />
+        <div class="file_upload">
+            <img class="avatar" [src]="user.avatar" />
+            <button class="file-input-button" (click)="onClickFileInput()">
+                <img class="file-input-icon" src="../../../../../assets/img/edit.svg" />
+                Change Avatar
+            </button>
+            <input (change)="fileChangeEvent($event)" #file type="file" name="name" style="display: none;" />
+        </div>
+        <div class="input-button">
+            <mat-form-field class="example-full-width">
+                <mat-label>Username</mat-label>
+                <input matInput [(ngModel)]="user.nick" required minlength="6" />
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Name</mat-label>
+                <input matInput [(ngModel)]="user.name" name="name" required minlength="6" />
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input matInput [(ngModel)]="user.email" name="email" required minlength="6" />
+            </mat-form-field>
+            <button class="save-button" (click)="saveChanges()">Save Changes</button>
+        </div>
+    </div>
+</div>
+<div [ngClass]="{'img-cropper-main-block': showImageCropper, 'hidden': !showImageCropper}">
+    <div class="img-cropper-block">
+        <img (click)="cancelUpload()" class="close-button" src="../../../../../assets/img/close-menu.svg" />
+        <image-cropper [imageChangedEvent]="imageChangedEvent"
+            [maintainAspectRatio]="cropperSettings.maintainAspectRatio" [aspectRatio]="cropperSettings.aspectRatio"
+            [format]="cropperSettings.format" [resizeToWidth]="cropperSettings.resizeToWidth"
+            [resizeToHeight]="cropperSettings.resizeToHeight" (imageCropped)="imageCropped($event)"
+            (imageLoaded)="imageLoaded()" (cropperReady)="cropperReady()" (loadImageFailed)="loadImageFailed()"
+            class="img-cropper"></image-cropper>
+        <div class="img-button-block">
+            <img [src]="croppedImage" style="height: fit-content;" />
+            <button (click)="addFile()" class="change-avatar-button">Change Avatar</button>
+        </div>
+    </div>
+
+</div>

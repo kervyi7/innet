@@ -1,0 +1,111 @@
+.main {
+    width: -webkit-fill-available;
+    height: 100vh;
+}
+
+.header {
+    height: 10vh;
+    background: linear-gradient(90deg, rgba(2,35,207,1) 12%, rgba(102,0,182,1) 70%);
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    padding: 0 1vw;
+    align-items: center;
+}
+
+.avatar {
+    width: 3.5vw;
+    height: 3.5vw;
+    border-radius: 10vh;
+    -o-object-fit: cover;
+    object-fit: cover;
+    display: block;
+    margin-right: 2vw;
+}
+
+.avatar-username-status {
+    display: flex;
+    width: 20vw;
+    align-items: center;
+    height: 3.5vw;
+}
+
+.username-status {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: -webkit-fill-available;
+    font-weight: 300;
+}
+
+.message-list {
+    height: 80vh;
+    overflow-y: scroll;
+}
+
+.message {
+    width: fit-content;
+    max-width: 30vw;
+    padding: 1vh 2vh;
+    margin: 1vh;
+    word-break: break-word;
+    color: white;
+}
+
+.my-message {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.my-message .message {
+    border-radius: 2vh 2vh 0vh 2vh;
+    background: #6600B6;
+}
+
+.not-my-message .message {
+    border-radius: 2vh 2vh 2vh 0vh;
+    background: #0223CF;
+}
+
+.message-date {
+    text-align: end;
+}
+
+.message-input-block {
+    height: 10vh;
+    display: flex;
+    background: #F4F4F4;
+    justify-content: space-between;
+    padding: 0 2vw;
+    align-items: center;
+}
+
+.username {
+    font-size: 3vh;
+}
+
+.send-button {
+    border: 0;
+    font-size: 3vh;
+    background: transparent;
+    color: #6600B6;
+}
+
+.message-input {
+    padding: 0;
+    outline: 0;
+    border: 0;
+    background: transparent;
+    width: -webkit-fill-available;
+    resize: none;
+    height: 50%;
+    font-size: 3vh;
+    font-family: Roboto;
+}
+
+.chat-not-selected {
+    text-align: center;
+    margin-top: 40vh;
+    font-size: 3vh;
+    letter-spacing: 0.1vw;
+}

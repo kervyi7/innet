@@ -1,0 +1,4 @@
+{
+    "backUrl": "http://localhost:49926",
+    "intervalHubReconnect": "10000"
+}
